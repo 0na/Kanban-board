@@ -1,4 +1,4 @@
 KANBAN BOARD
 
 
-https://0na.github.io/kanban/
+https://0na.github.io/Kanban-board/
