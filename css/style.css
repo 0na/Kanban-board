@@ -1,6 +1,6 @@
 body .container {
 <<<<<<< HEAD
-  background-image: url(/images/background.jpg);
+  background-image: url("/images/background.jpg");
 =======
   background-image: url("images/background.jpg");
 >>>>>>> c217955f207aacf512812e543e2a1a89d5d51bbd
