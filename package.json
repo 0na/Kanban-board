@@ -1,0 +1,62 @@
+{
+  "name": "learning-git-7.5",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:html",
+    "test:html": "globstar nu-html-checker *.html",
+    "init-project": "npm install && npm run init:dirs && npm run init:files && npm run init:gitignore",
+    "init:dirs": "mkdirp sass css vendor images js",
+    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+    "build": "npm run build:sass && npm run build:autoprefixer && npm run test",
+    "build:clean": "rimraf vendor/*",
+    "build:sass": "node-sass --output-style compact -o css sass",
+    "build:autoprefixer": "autoprefixer-cli css/style.css",
+    "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
+    "watch": "npm-run-all build -p watch:*",
+    "watch:sass": "node-sass --output-style expanded --source-map true -o css sass --watch",
+    "watch:sassprefixer": "onchange sass/*.scss -- npm-run-all -p build:sass build:autoprefixer",
+    "watch:browsersync": "browser-sync start --server --files css/*.css *.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "autoprefixer-core": "^6.0.1",
+    "browser-sync": "^2.26.3",
+    "flickity": "^2.1.2",
+    "flickity-hash": "^1.0.3",
+    "flickity-imagesloaded": "^2.0.0",
+    "globstar": "^1.0.0",
+    "mustache": "^3.0.1",
+    "node-sass": "^4.11.0",
+    "normalize.css": "^8.0.1",
+    "npm-run-all": "^4.1.5",
+    "nu-html-checker": "^0.1.0",
+    "onchange": "^5.2.0",
+    "postcss": "^7.0.7",
+    "postcss-cli": "^6.1.0",
+    "postcss-cssnext": "^3.1.0",
+    "stylelint": "^9.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0na/Flickity-carousel"
+  },
+  "bugs": {
+    "url": "https://github.com/0na/Flickity-carousel/issues"
+  },
+  "homepage": "https://github.com/0na/Flickity-carousel#readme",
+  "description": "",
+  "dependencies": {
+    "gulp-autoprefixer": "^6.0.0",
+    "html-validator": "^3.1.3",
+    "jquery": "^3.3.1",
+    "postcss-flexboxfixer": "0.0.5",
+    "postcss-unprefix": "^2.1.3",
+    "postcss-use": "^3.0.0",
+    "rimraf": "^2.6.2"
+  }
+}
