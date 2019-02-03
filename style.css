@@ -1,13 +1,5 @@
 body .container {
-<<<<<<< HEAD
   background-image: url("/images/background.jpg");
-=======
-<<<<<<< HEAD
-  background-image: url("/images/background.jpg");
-=======
-  background-image: url("images/background.jpg");
->>>>>>> c217955f207aacf512812e543e2a1a89d5d51bbd
->>>>>>> 2c12afcacf71714cc10f946446251d80a15ea560
   background-repeat: no-repeat;
   background-size: cover;
   width: 90%;
